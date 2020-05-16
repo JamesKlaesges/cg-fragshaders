@@ -17,18 +17,18 @@ void main() {
     
     //Compute horizontal gradient as follows:
     //sobel_h = bottom_right + (2.0 * center_right) + top_right - bottom_left - (2.0 * center_left) - top_left
-    vec2 botRight = vec2(texcoord.x + width/2, texcoord.y - height/2);
-    vec2 topRight = vec2(texcoord.x + width/2, texcoord.y + height/2);
-    vec2 botLeft = vec2(texcoord.x - width/2, texcoord.y - height/2);
-    vec2 topLeft = vec2(texcoord.x - width/2, texcoord.y + height/2);
-    vec2 centerRight = vec2(texcoord.x + width/2, texcoord.y);
-    vec2 centerLeft = vec2(texcoord.x - width/2, texcoord.y);
+    vec2 botRight = vec2(texcoord.x + width/2.0, texcoord.y - height/2.0);
+    vec2 topRight = vec2(texcoord.x + width/2.0, texcoord.y + height/2.0);
+    vec2 botLeft = vec2(texcoord.x - width/2.0, texcoord.y - height/2.0);
+    vec2 topLeft = vec2(texcoord.x - width/2.0, texcoord.y + height/2.0);
+    vec2 centerRight = vec2(texcoord.x + width/2.0, texcoord.y);
+    vec2 centerLeft = vec2(texcoord.x - width/2.0, texcoord.y);
     vec2 sobel_h = (botRight + (2.0 * centerRight) + topRight - botLeft - (2.0 * centerLeft) - topLeft); 
     
     //Compute vertical gradient as follows:
     //sobel_v = bottom_left + (2.0 * bottom_center) + bottom_right - top_left - (2.0 * top_center) - top_right
-    vec2 botCenter = vec2(texcoord.x, texcoord.y - height/2);
-    vec2 topCenter = vec2(texcoord.x, texcoord.y + height/2); 
+    vec2 botCenter = vec2(texcoord.x, texcoord.y - height/2.0);
+    vec2 topCenter = vec2(texcoord.x, texcoord.y + height/2.0); 
     vec2 sobel_v = (botLeft + (2.0 * botCenter) + botRight - botLeft - (2.0 * topCenter) - topRight); 
     
     //The Sobel edge values can then be computed using the distance formula with the horizontal and vertical gradients
