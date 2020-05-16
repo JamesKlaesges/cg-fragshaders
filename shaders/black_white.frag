@@ -14,5 +14,5 @@ void main() {
     //Black and white images are created by assigning the luminance value to all 3 color components
     FragColor = texture(image, texcoord);
     float L = 0.299 * FragColor.x + 0.587 * FragColor.y + 0.114 * FragColor.z;
-    FragColor = vec4(L, L, L, 1.0)
+    FragColor = vec4(L, L, L, 1.0);
 }
