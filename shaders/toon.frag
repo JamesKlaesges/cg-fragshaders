@@ -13,7 +13,7 @@ void main() {
     //Rounding can be done by multiplying by 4.0, then rounding, then dividing by 4.0
     
     FragColor = texture(image, texcoord);
-    vec4 multiply = (4.0, 4.0, 4.0, 1.0);
+    vec4 multiply = vec4(4.0, 4.0, 4.0, 1.0);
     FragColor = (round(FragColor * multiply)/multiply);
     
 }
