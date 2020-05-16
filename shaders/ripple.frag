@@ -23,7 +23,7 @@ void main() {
     vec2 offset = newTexCoord * (sin(radius * 30.0 - time * 5.0) + 0.5) / 60.0;
     
     //calculate final texture coordinate = original_texture_coordinate + texture_coordinate_offset
-    finalTexCoord = newTexCoord + offset;
+    vec2 finalTexCoord = newTexCoord + offset;
     
     FragColor = texture(image, finalTexCoord);
 }
