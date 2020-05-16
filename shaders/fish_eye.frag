@@ -16,7 +16,7 @@ void main() {
     texcoord = vec2(texcoord.x * 2 - 1, texcoord.y * 2 - 1);
     
     //calculate 𝜽 = arctan(texture_coordinate_y, texture_coordinate_x)
-    vec2 theta = atan(texcoord.y, texcoord.x);
+    float theta = atan(texcoord.y, texcoord.x);
     
     //calculate radius = magnitude of texture coordinate, raised to the power of 1.5
     float radius = pow(length(texcoord), 1.5);
