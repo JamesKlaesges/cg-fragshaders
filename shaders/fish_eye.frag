@@ -13,7 +13,7 @@ void main() {
     
     
     //multiply by 2, then subtract 1
-    texcoord = vec2(texcoord.x * 2 - 1, texcoord.y * 2 - 1);
+    texcoord = vec2(texcoord.x * 2.0 - 1.0, texcoord.y * 2.0 - 1.0);
     
     //calculate 𝜽 = arctan(texture_coordinate_y, texture_coordinate_x)
     float theta = atan(texcoord.y, texcoord.x);
