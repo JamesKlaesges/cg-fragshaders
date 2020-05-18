@@ -33,7 +33,7 @@ void main() {
     
     //The Sobel edge values can then be computed using the distance formula with the horizontal and vertical gradients
     //sobel_edge = sqrt(sobel_h^2 + sobel_v^2)
-    vec2 sobel_edge = sqrt(pow(sobel_h, 2.0) + pow(sobel_v, 2.0));
+    vec2 sobel_edge = sqrt(pow(sobel_h.xy, 2.0) + pow(sobel_v.xy, 2.0));
     
     //If the magnitude of the sobel edge vector is greater than or equal to 0.5, then make pixel black, otherwise make pixel normal color from the texture
     FragColor = texture(image, texcoord);
