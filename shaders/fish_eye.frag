@@ -19,7 +19,7 @@ void main() {
     float theta = atan(newTexCoord.y, newTexCoord.x);
     
     //calculate radius = magnitude of texture coordinate, raised to the power of 1.5
-    float radius = pow(length(newTexCoord), 1.5);
+    float radius = pow(length(newTexCoord.xy), 1.5);
     
     //calculate final texture coordinate = (radius * cos(𝜽),  radius * sin(𝜽))
     vec2 finalTexCoord = vec2(radius * cos(theta), radius * sin(theta));
