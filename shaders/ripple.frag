@@ -22,7 +22,7 @@ void main() {
         0.0, 0.0, 1.0, 0.0,
         0.0, 0.0, 0.0, 1.0);
     
-    scaleTex = (texcoord * scale * translate);
+    vec4 scaleTex = (vec4(texcoord.xy, 0.0, 0.0) * scale * translate);
     
     //multiply by 2, then subtract 1
     vec2 newTexCoord = vec2(scaleTex.x * 2.0 - 1.0, scaleTex.y * 2.0 - 1.0);
