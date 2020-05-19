@@ -12,7 +12,7 @@ void main() {
     //scale and translate the texture coordinate such that it is in the range [-1.0, 1.0]
     //multiply by 2, then subtract 1
     //vec2 newTexCoord = vec2(texcoord.x * 2.0 - 1.0, texcoord.y * 2.0 - 1.0);
-    newTexCoord = vec2(texcoord.xy);
+    vec2 newTexCoord = vec2(texcoord.xy);
     
     //calculate 𝜽 = arctan(texture_coordinate_y, texture_coordinate_x)
     float theta = atan(newTexCoord.y, newTexCoord.x);
