@@ -13,8 +13,8 @@ void main() {
     //scale and translate the texture coordinate such that it is in the range [-1.0, 1.0]
     vec2 translate = vec2(-texcoord.x, -texcoord.y);
     mat2 scale = mat2(
-        1.0, 0.0,
-        0.0, 1.0 );
+        2.0, 0.0,
+        0.0, 2.0 );
     
     vec2 scaleTex = (texcoord.xy * scale * translate);
     
