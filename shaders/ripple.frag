@@ -24,15 +24,16 @@ void main() {
     //vec2 newTexCoord = vec2(scaleTex.x * 2.0 - 1.0, scaleTex.y * 2.0 - 1.0);
     vec3 newTexCoord = (vec3(texcoord.xy, 1.0) * translate * scale);
     
+    vec2 texCoord2 = vec2(newTexCoord.xy);
     
     //calculate radius = magnitude of texture coordinate
-    float radius = length(newTexCoord);
+    float radius = length(texCoord2);
     
     //calculate a texture coordinate offset = texture_coordinate * (sin(radius * 30.0 - time * 5.0) + 0.5) / 60.0
-    vec2 offset = newTexCoord * (sin(radius * 30.0 - time * 5.0) + 0.5) / 60.0;
+    vec2 offset = texCoord2 * (sin(radius * 30.0 - time * 5.0) + 0.5) / 60.0;
     
     //calculate final texture coordinate = original_texture_coordinate + texture_coordinate_offset
-    vec2 finalTexCoord = newTexCoord + offset;
+    vec2 finalTexCoord = texCoord2 + offset;
     
     FragColor = texture(image, finalTexCoord);
 }
