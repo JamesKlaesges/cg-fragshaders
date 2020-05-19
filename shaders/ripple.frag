@@ -17,12 +17,12 @@ void main() {
         0.0, 0.0, 1.0, 0.0,
         0.0, 0.0, 0.0, 1.0);
     mat4 scale = mat4(
-        texcoord.x/2.0, 0.0, 0.0, 0.0,
-        0.0, texcoord.y/2.0, 0.0, 0.0,
+        2.0 * texcoord.x, 0.0, 0.0, 0.0,
+        0.0, 2.0 * texcoord.y, 0.0, 0.0,
         0.0, 0.0, 1.0, 0.0,
         0.0, 0.0, 0.0, 1.0);
     
-    vec4 scaleTex = (vec4(texcoord.xy, 0.0, 0.0) * translate * scale);
+    vec4 scaleTex = (vec4(texcoord.xy, 0.0, 0.0) * scale * translate);
     
     //multiply by 2, then subtract 1
     vec2 newTexCoord = vec2(scaleTex.x * 2.0 - 1.0, scaleTex.y * 2.0 - 1.0);
