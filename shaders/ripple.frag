@@ -21,7 +21,7 @@ void main() {
         0.0, 2, 0.0,
         0.0, 0.0, 1.0);
         
-    vec2 newTexCoord = texcoord * 2.0 - 1.0;
+    vec2 newTexCoord = 2.0 * texcoord.xy - 1.0;
     //vec3 newTexCoord = (vec3(texcoord.xy, 1.0) * translate * scale);
     
     vec2 texCoord2 = vec2(newTexCoord.xy);
