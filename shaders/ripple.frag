@@ -12,8 +12,8 @@ out vec4 FragColor;
 void main() {
     //scale and translate the texture coordinate such that it is in the range [-1.0, 1.0]
     mat3 translate = mat3(
-        1.0, 0.0, 0.0,
-        0.0, 1.0, 0.0,
+        1.0, 0.0, 1.0,
+        0.0, 1.0, 1.0,
         0.0, 0.0, 1.0);
     mat3 scale = mat3(
         1.5, 0.0, 0.0,
