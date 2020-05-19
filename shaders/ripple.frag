@@ -12,11 +12,11 @@ out vec4 FragColor;
 void main() {
     //scale and translate the texture coordinate such that it is in the range [-1.0, 1.0]
     mat2 translate = mat2(
+        1.0, -texcoord.x,
+        0.0, -texcoord.y);
+    mat2 scale = mat2(
         1.0, 0.0,
         0.0, 1.0);
-    mat2 scale = mat2(
-        2.0, 0.0,
-        0.0, 2.0);
     
     vec2 scaleTex = (texcoord * translate * scale);
     
