@@ -16,7 +16,7 @@ void main() {
         1.0, 0.0,
         0.0, 1.0 );
     
-    vec4 scaleTex = (texcoord.xy * scale * translate);
+    vec2 scaleTex = (texcoord.xy * scale * translate);
     
     //multiply by 2, then subtract 1
     vec2 newTexCoord = vec2(scaleTex.x * 2.0 - 1.0, scaleTex.y * 2.0 - 1.0);
