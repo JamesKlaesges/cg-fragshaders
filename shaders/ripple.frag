@@ -11,19 +11,19 @@ out vec4 FragColor;
 
 void main() {
     //scale and translate the texture coordinate such that it is in the range [-1.0, 1.0]
+    //multiply by 2, then subtract 1
     mat3 translate = mat3(
-        1.0, 0.0, texcoord.x,
-        0.0, 1.0, texcoord.y,
+        1.0, 0.0, -1,
+        0.0, 1.0, -1,
         0.0, 0.0, 1.0);
     mat3 scale = mat3(
-        texcoord.x, 0.0, 0.0,
-        0.0, texcoord.y, 0.0,
+        2, 0.0, 0.0,
+        0.0, 2, 0.0,
         0.0, 0.0, 1.0);
+        
+    //vec2 newTexCoord = vec2(scaleTex.x * 2.0 - 1.0, scaleTex.y * 2.0 - 1.0);
+    vec3 newTexCoord = (vec3(texcoord.xy, 1.0) * translate * scale);
     
-    vec3 scaleTex = (vec3(texcoord.xy, 1.0) * translate * scale);
-    
-    //multiply by 2, then subtract 1
-    vec2 newTexCoord = vec2(scaleTex.x * 2.0 - 1.0, scaleTex.y * 2.0 - 1.0);
     
     //calculate radius = magnitude of texture coordinate
     float radius = length(newTexCoord);
