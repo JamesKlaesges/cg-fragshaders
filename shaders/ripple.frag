@@ -16,8 +16,8 @@ void main() {
         0.0, 1.0, 0.0,
         0.0, 0.0, 1.0);
     mat3 scale = mat3(
-        texcoord.x, 0.0, 0.0,
-        0.0, texcoord.y, 0.0,
+        -texcoord.x, 0.0, 0.0,
+        0.0, -texcoord.y, 0.0,
         0.0, 0.0, 1.0);
     
     vec3 scaleTex = (vec3(texcoord.xy, 1.0) * translate * scale);
