@@ -15,8 +15,8 @@ void main() {
         1.0, 0.0,
         0.0, 1.0);
     mat2 scale = mat2(
-        1.0, 0.0,
-        0.0, 1.0);
+        2.0, 0.0,
+        0.0, 2.0);
     
     vec2 scaleTex = (texcoord * translate * scale);
     
