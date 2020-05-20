@@ -22,8 +22,8 @@ void main() {
     vec2 topRight = vec2(w, h);
     vec2 botLeft = vec2(-w, -h);
     vec2 topLeft = vec2(-w, h);
-    vec2 centerRight = vec2(-w, 0.0);
-    vec2 centerLeft = vec2(w, 0.0);
+    vec2 centerRight = vec2(w, 0.0);
+    vec2 centerLeft = vec2(-w, 0.0);
     vec2 sobel_h = (botRight + (2.0 * centerRight) + topRight - botLeft - (2.0 * centerLeft) - topLeft); 
     
     //Compute vertical gradient as follows:
