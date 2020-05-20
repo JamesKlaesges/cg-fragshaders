@@ -38,7 +38,7 @@ void main() {
     
     //If the magnitude of the sobel edge vector is greater than or equal to 0.5, then make pixel black, otherwise make pixel normal color from the texture
     FragColor = texture(image, texcoord);
-    if (length(sobel_edge) >= 0.5))
+    if (length(sobel_edge) >= 0.5)
     {
         FragColor = vec4(0.0, 0.0, 0.0, 1.0);
     }
