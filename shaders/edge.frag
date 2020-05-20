@@ -24,13 +24,13 @@ void main() {
     vec2 topLeft = vec2(-w, h);
     vec2 centerRight = vec2(w, 0.0);
     vec2 centerLeft = vec2(-w, 0.0);
-    vec2 sobel_h = (botRight + (2.0 * centerRight) + topRight - botLeft - (2.0 * centerLeft) - topLeft); 
+    vec2 sobel_h = (botRight + (2.0 * centerRight) + topRight - (botLeft + (2.0 * centerLeft) + topLeft)); 
     
     //Compute vertical gradient as follows:
     //sobel_v = bottom_left + (2.0 * bottom_center) + bottom_right - top_left - (2.0 * top_center) - top_right
     vec2 botCenter = vec2(0.0, -h);
     vec2 topCenter = vec2(0.0, h); 
-    vec2 sobel_v = (botLeft + (2.0 * botCenter) + botRight - topLeft - (2.0 * topCenter) - topRight); 
+    vec2 sobel_v = (botLeft + (2.0 * botCenter) + botRight - (topLeft + (2.0 * topCenter) + topRight)); 
     
     //The Sobel edge values can then be computed using the distance formula with the horizontal and vertical gradients
     //sobel_edge = sqrt(sobel_h^2 + sobel_v^2)
